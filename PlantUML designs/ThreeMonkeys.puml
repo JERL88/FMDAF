@@ -1,0 +1,19 @@
+@startuml
+
+abstract Control{
+
+    +Plants[]
+    +Inputs[]
+    +Gains[]
+    +Errors[]
+    +State
+    +Feedback() 
+    +Timer()
+    +Controller()   
+    
+}
+
+
+
+
+@enduml
