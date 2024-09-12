@@ -3,14 +3,14 @@
 abstract Control{
 
     +Plants[]
+    +Disturbance[]
     +Inputs[]
     +Gains[]
     +Errors[]
-    +State
+    +State()
     +Feedback() 
-    +Timer()
-    +Controller()   
-    
+    +Timer() 
+
 }
 
 

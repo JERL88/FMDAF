@@ -1,0 +1,26 @@
+@startuml
+class Task {
+    - const char* taskName
+    - uint32_t stackSize
+    - UBaseType_t priority
+    - TaskHandle_t taskHandle
+    + Task(const char* name, uint32_t stack, UBaseType_t prio)
+    + ~Task()
+    + virtual void taskFunction() = 0
+    + void start()
+    + void stop()
+}
+
+class LedTask {
+    - int ledPin
+    - TickType_t delayMs
+    + LedTask(const char* name, uint32_t stack, UBaseType_t prio, int pin, TickType_t delay)
+    + void taskFunction() override
+    + void toggleLed(int pin)
+}
+
+
+Task <|-- LedTask
+Task <|-- DelayTask
+
+@enduml
