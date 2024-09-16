@@ -21,19 +21,13 @@ class Task
     { 
         stop();
     }
-    
+
     virtual void taskFunction()=0
-
-    static void taskFunctionWrapper(void* pvParameters)
-    {
-        // Convert the pointer back to the object
-        Task* task = static_cast<Task*>(pvParameters);
-        // Call the task 
-        task->taskFunction();
-        // Delete the task
-        vTaskDelete(nullptr);
+    
+    static void taskEntryPoint(void* taskInstance) {
+        static_cast<Task*>(taskInstance)->taskFunction();
     }
-
+    
     void start()
     { 
         xTaskCreate()
