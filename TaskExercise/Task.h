@@ -14,26 +14,24 @@ class Task
     Task(const char* name, uint32_t stack, UBaseType_t Prio) //task constructor
     : taskName(name), stackSize(stack), priority(prio), taskHandle(nullptr) 
     {
-
+        xTaskCreate(this->taskFunction,taskName,stackSize,NULL,priority,&taskHandle)
     }
     
     ~Task() //task destructor 
     { 
-        stop();
+        xTaskSuspend()
+        vTaskDestroy()
     }
 
     virtual void taskFunction()=0
     
-    static void taskEntryPoint(void* taskInstance) {
-        static_cast<Task*>(taskInstance)->taskFunction();
-    }
-    
     void start()
     { 
-        xTaskCreate()
+        xTaskResume()
     }
     void stop()
     {
+        xTaskSuspend()
     }
 
 };
