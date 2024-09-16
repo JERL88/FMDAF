@@ -1,5 +1,6 @@
 {
     "C_Cpp.default.compilerPath": "c:\\Users\\DJOA0\\.espressif\\tools\\xtensa-esp-elf\\esp-13.2.0_20240530\\xtensa-esp-elf\\bin\\xtensa-esp32s2-elf-gcc.exe",
     "C_Cpp.errorSquiggles": "enabled",
-    "C_Cpp.intelliSenseEngine": "Tag Parser"
+    "C_Cpp.intelliSenseEngine": "Tag Parser",
+    "idf.portWin": "COM4"
 }
