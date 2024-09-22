@@ -3,4 +3,5 @@
 cmake_minimum_required(VERSION 3.16)
 
 include($ENV{IDF_PATH}/tools/cmake/project.cmake)
-project(project-name)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+project(blink_example_main)

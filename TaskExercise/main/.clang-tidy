@@ -1,0 +1,7 @@
+Checks: 'google-*, -google-runtime-references, -cppcoreguidelines-no-malloc, -cppcoreguidelines-owning-memory'
+CheckOptions:
+  - key: readability-identifier-naming.VariableCase
+    value: camelBack
+WarningsAsErrors: '*'
+HeaderFilterRegex: '.*'
+FormatStyle: 'file'
